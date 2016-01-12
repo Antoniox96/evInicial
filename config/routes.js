@@ -34,7 +34,7 @@ module.exports.routes = {
 
   '/': {
     view: 'homepage'
-  }
+  },
 
   /***************************************************************************
   *                                                                          *
@@ -45,5 +45,7 @@ module.exports.routes = {
   * for configuration options and examples.                                  *
   *                                                                          *
   ***************************************************************************/
+  
+  'GET r|º/Pregunta/(\\d+)PreguntaId/Corregir$|': [ 'PreguntaController.load', 'PreguntaController.CorregirRespuesta' ],
 
 };
