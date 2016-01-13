@@ -33,7 +33,9 @@ module.exports.routes = {
   ***************************************************************************/
 
   '/': {
+
     view: 'homepage'
+    
   },
 
   /***************************************************************************
@@ -46,6 +48,6 @@ module.exports.routes = {
   *                                                                          *
   ***************************************************************************/
   
-  'GET r|º/Pregunta/(\\d+)PreguntaId/Corregir$|': [ 'PreguntaController.load', 'PreguntaController.CorregirRespuesta' ],
+  'GET r|^/Pregunta/(\\d+)/Corregir$|PreguntaId' : [ 'PreguntaController.load', 'PreguntaController.CorregirRespuesta' ],
 
 };
