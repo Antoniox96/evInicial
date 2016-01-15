@@ -50,4 +50,5 @@ module.exports.routes = {
   
   'GET r|^/Pregunta/(\\d+)/Corregir$|PreguntaId' : [ 'PreguntaController.load', 'PreguntaController.CorregirRespuesta' ],
 
+  'POST r|^/Cuestionario/(\\d+)/Duplicar$|CuestionarioId' : [ 'CuestionarioController.load', 'CuestionarioController.Duplicar' ],
 };
