@@ -13,7 +13,20 @@ module.exports = {
 
     fechaFin : { type: 'date' },
 
-    preguntas: { collection: 'Pregunta', via: 'cuestionarios' }
+    preguntas: { collection: 'Pregunta', via: 'cuestionarios' },
+
+    duplicar: function(cb) {
+    	cuestionarioJSON = this.toJSON();
+	    delete cuestionarioJSON['id'];
+		Cuestionario.create(cuestionarioJSON).exec(function createCB(err, created) {
+	      	if(err) return cb(err);
+	      		/*Cuestionario.preguntas.forEach(function (pregunta) {
+	      			created.preguntas.add(pregunta.id)
+	      		}); */
+			cb(null, created);
+
+   		})
+    }
 
   },
 

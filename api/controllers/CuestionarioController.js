@@ -20,9 +20,17 @@ module.exports = {
 	},
 
 	Duplicar: function(req, res, next) {
+		/*
 		Cuestionario.duplicar(req.Cuestionario, function (err, CuestionarioDuplicado) { 
 			res.json(CuestionarioDuplicado);
 		});
+		*/
+
+		req.Cuestionario.duplicar(function (err, CuestionarioDuplicado) { 
+			res.json(CuestionarioDuplicado);
+		});
 	}
+
+
 
 };
