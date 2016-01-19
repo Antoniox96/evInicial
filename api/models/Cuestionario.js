@@ -15,6 +15,8 @@ module.exports = {
 
     preguntas: { collection: 'Pregunta', via: 'cuestionarios' },
 
+    alumnos: { collection: 'Alumno', via: 'cuestionarios' },
+
     duplicar: function(cb) {
     	cuestionarioJSON = this.toJSON();
 	    delete cuestionarioJSON['id'];
@@ -26,7 +28,15 @@ module.exports = {
 			cb(null, created);
 
    		})
-    }
+    },
+
+    asociarGrupo: function(grupo, cb) {
+		while (grupo.alumnos.length){
+			this.alumnos.add(grupo.alumnos.pop());
+			this.save(console.log);
+	  	}
+		cb(null);
+	}
 
   },
 
@@ -58,6 +68,6 @@ module.exports = {
 
 	  });
 
-}
+	}
 
-};
+}

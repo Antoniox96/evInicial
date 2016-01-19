@@ -29,8 +29,12 @@ module.exports = {
 		req.Cuestionario.duplicar(function (err, CuestionarioDuplicado) { 
 			res.json(CuestionarioDuplicado);
 		});
+	},
+
+	AsociarGrupo: function(req, res, next) {
+		req.Cuestionario.asociarGrupo(req.Grupo, function (err, CuestionarioDuplicado) { 
+			res.json(CuestionarioDuplicado);
+		});
 	}
-
-
 
 };
