@@ -1,10 +1,3 @@
-/**
- * GrupoController
- *
- * @description :: Server-side logic for managing Grupoes
- * @help        :: See http://sailsjs.org/#!/documentation/concepts/Controllers
- */
-
 module.exports = {
 	load: function(req, res, next) {
 		Grupo.findOne().where( { id: Number(req.params.GrupoId) }

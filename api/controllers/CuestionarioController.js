@@ -1,10 +1,3 @@
-/**
- * CuestionarioController
- *
- * @description :: Server-side logic for managing Cuestionarios
- * @help        :: See http://sailsjs.org/#!/documentation/concepts/Controllers
- */
-
 module.exports = {
 	load: function(req, res, next) {
 		Cuestionario.findOne().where( { id: Number(req.params.CuestionarioId) }
