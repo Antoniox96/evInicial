@@ -12,7 +12,7 @@ module.exports = {
 
     curso: { type: 'integer', size: 11 },
 
-    alumnos: { collection: 'Alumno', via: 'grupo' }
+    alumnos: { collection: 'Alumno', via: 'grupos' }
 
   }
 

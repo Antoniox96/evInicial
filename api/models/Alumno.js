@@ -12,8 +12,15 @@ module.exports = {
 
     fechaNac : { type: 'date' },
 
-    grupo: {
-    	model: 'grupo'
+    email : { type: 'string', email: true, unique: true, required: true},
+
+    user: {
+        model: 'user'
+    },
+
+    grupos: {
+    	collection : 'grupo',
+        via : 'alumnos'
     },
 
     cuestionarios : {

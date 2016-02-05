@@ -13,9 +13,11 @@ module.exports = {
 
 		nombre: { type: 'string', size: 19 },
 
-		email: { type: 'string', size: 100 },
+    	email : { type: 'string', email: true, unique: true, required: true},
 
-		materias: { collection: 'MateriaImpartida', via: 'profesor' }
+		materias: { collection: 'MateriaImpartida', via: 'profesor' },
+
+		user: { model: 'user' }
 
 	}
 

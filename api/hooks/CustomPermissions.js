@@ -1,4 +1,4 @@
-// api/hooks/permissions.js
+// api/hooks/CustomPermissions.js
 
 /*
 var permissionPolicies = [

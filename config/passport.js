@@ -15,7 +15,8 @@ _.merge(exports, {
 			options: {
 			  clientID: '1068516171501-ajjivruohla5hrq5q9ah73t1qveqcu5h.apps.googleusercontent.com',
 			  clientSecret: 'Fa6WYdwkly5K6uXyRxZSZpJS',
-			  scope: ['profile', 'email']
+			  scope: ['profile', 'email'],
+ 		      hd: 'murciaeduca.es'
 			}
 	  	}		
 	}
