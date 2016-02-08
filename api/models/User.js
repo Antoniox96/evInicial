@@ -46,7 +46,7 @@ _.merge(exports, _super);
 	   	.populate('user')
 	   	.then(function (profesor) {
 	   		if(profesor) {
-		      		Profesor.update(profesor.id, {user: user.id}).then(function(profesor){
+		      		Profesor.update(profesor.id, {user: user.id}).then(function(profesores){
 				       Promise.bind({ }, User.findOne(user.id)
 				        .populate('roles')
 				        .then(function (user) {
@@ -58,7 +58,7 @@ _.merge(exports, _super);
 				          return this.user.save();
 				        })
 				        .then(function (updatedUser) {
-				          sails.log.verbose('role "profesor" attached to user', this.user.username);
+				          sails.log.verbose('role "profesor" attached to user', profesor.nombre);
 				          next();
 				        })
 				        .catch(function (e) {
@@ -77,7 +77,7 @@ _.merge(exports, _super);
 	   	.populate('user')
 	   	.then(function (alumno) {
 	   		if(alumno) {
-		      		Alumno.update(alumno.id, {user: user.id}).then(function(alumno){
+		      		Alumno.update(alumno.id, {user: user.id}).then(function(alumnos){
 				       Promise.bind({ }, User.findOne(user.id)
 				        .populate('roles')
 				        .then(function (user) {
@@ -89,7 +89,7 @@ _.merge(exports, _super);
 				          return this.user.save();
 				        })
 				        .then(function (updatedUser) {
-				          sails.log.verbose('role "alumno" attached to user', this.user.username);
+				          sails.log.verbose('role "alumno" attached to user', alumno.nombre);
 				          next();
 				        })
 				        .catch(function (e) {
