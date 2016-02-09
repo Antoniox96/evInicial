@@ -28,6 +28,10 @@ module.exports = {
 		req.Cuestionario.asociarGrupo(req.Grupo, function (err, CuestionarioDuplicado) { 
 			res.json(CuestionarioDuplicado);
 		});
+	},
+
+	Resultado: function(req, res, next) {
+		res.view('cuestionario/resultado', {aciertos: 8, fallos: 2});
 	}
 
 };

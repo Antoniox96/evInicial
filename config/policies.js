@@ -63,6 +63,14 @@ module.exports.policies = {
 
   AuthController: {
     '*': ['passport']
+  },
+
+  CuestionarioController: {
+    'Resultado': ['sessionAuth']
+  },
+
+  MapaController: {
+    'IesDosMares': ['sessionAuth']
   }
 
 };
